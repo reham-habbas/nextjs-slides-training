@@ -27,14 +27,6 @@ export default function Presentation() {
           <div className="r-stack team-images">
             <div className="fragment">
               <Image
-                src="/images/joseph.jpg"
-                alt="joseph"
-                width={280}
-                height={300}
-              />
-            </div>
-            <div className="fragment">
-              <Image
                 src="/images/saad.jpg"
                 alt="saad"
                 width={280}
