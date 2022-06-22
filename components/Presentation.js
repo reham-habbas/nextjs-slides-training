@@ -183,21 +183,91 @@ export default function Presentation() {
           ></div>
         </section>
         <section data-auto-animate data-auto-animate-unmatched="fade">
-          <h2 className="r-fit-text">NextJS = React ++</h2>
+          <h2 className="r-fit-text">NextJS = React++;</h2>
         </section>
-        <section>
+
+        {/* Saad's Slides */}
+
         <section id="fragments">
-            <ul>
-              <li className="fragment"> Full React compatibility</li>
-              <li className="fragment">
-              SSG / SSR / ISR + API
-              </li>
-              <li className="fragment"> Optimizations (Image, Font, Script, Code split)</li>
-              <li className="fragment"> Hot reload with state preservation </li>
-              <li className="fragment"> Routing + Built in CSS suppor</li>
-            </ul>
-          </section>
+          <img src="https://blog.logrocket.com/wp-content/uploads/2019/06/ssr-explanation.png" width="700" />
         </section>
+
+        <section id="fragments">
+          <img src="https://blog.logrocket.com/wp-content/uploads/2019/06/csr-explanation.png" width="700" />
+        </section>
+
+        <section>
+          <h3>Does SSR improve application performance?</h3>
+
+          <p className="r-fit-text">Theoretically, the diagrams show us SSR is more performant than CSR.</p>
+
+          <p className="r-fit-text"><strong>Hypothesis:</strong> a web application built with SSR is more performant than one built with CSR.</p>
+        </section>
+
+        <section id="fragments">
+          <h3>Performance Benefits</h3>
+        </section>
+
+        <section id="fragments">
+          <h3>Code Splitting?</h3>
+
+          <p className="r-fit-text">We usually split our applications into multiple pages that can be accessed from different URLs. Each of these pages becomes a unique entry point into the application.</p>
+
+          <p className="r-fit-text">Code-splitting is the process of splitting the application’s bundle into smaller chunks required by each entry point. The goal is to improve the application's initial load time by only loading the code required to run that page.</p>
+
+          <img src="https://nextjs.org/static/images/learn/foundations/code-splitting.png" height="300px" />
+        </section>
+
+        <section id="fragments">
+          <p className="r-fit-text">Next.js has built-in support for code splitting. Each file inside your <code data-trim data-noescape>{`pages/`}</code> directory will be automatically code split into its own JavaScript bundle during the build step.</p>
+
+          
+          <p className="r-fit-text">Any code shared between pages is also split into another bundle to avoid re-downloading the same code on further navigation.</p>
+          <p className="r-fit-text">After the initial page load, Next.js can start pre-loading the code of other pages users are likely to navigate to.</p>
+        </section>
+
+        <section id="fragments">
+          <h3>Font Optimization</h3>
+          <p className="r-fit-text">By default, Next.js will automatically inline font CSS at build time, eliminating an extra round trip to fetch font declarations.</p>
+
+          <Image
+            src="/images/fonts.png"
+            alt="fonts"
+            width={670}
+            height={308}
+          />
+        </section>
+
+        <section id="fragments">
+          <h3>Largest Contentful Paint (LCP)</h3>
+
+          <p className="r-fit-text">Largest Contentful Paint (LCP) is one of the three Core Web Vitals metrics, and it represents how quickly the main content of a web page is loaded. Specifically, LCP measures the time from when the user initiates loading the page until the largest image or text block is rendered within the viewport.</p>
+
+          <p className="r-fit-text">To provide a good user experience, sites should strive to have an LCP of 2.5 seconds or less for at least 75% of page visits.</p>
+        </section>
+
+        <section id="fragments">
+          <h3>Cumulative Layout Shift (CLS)</h3>
+
+          <p className="r-fit-text">The Cumulative Layout Shift (CLS) metric is a measure of your site’s overall layout stability. A site that unexpectedly shifts layout as the page loads can lead to accidental user error and distraction.</p>
+
+          <img src="https://nextjs.org/static/images/learn/seo/cls-example.png" />
+        </section>
+
+        <section id="fragments">
+          <h3>How does Next tackle this?</h3>
+
+          <Image src="/images/image-tag.png" width={670} height={308} alt="image" />
+
+          <p className="r-fit-text"><code data-trim data-noescape>{`height`}</code> and <code data-trim data-noescape>{`width`}</code> properties are both optional in the <code data-trim data-noescape>{`img`}</code> tag. As a result, many developers tend to ignore it, causing a bad CLS score. The Next.js Image component makes height and width required props, keeping the developer honest. It also maintains <code data-trim data-noescape>{`aspect-ratio`}</code> out of the box</p>
+        </section>
+
+        <section>
+          <img src="https://blog-img.speedcurve.com/img/lighthouse-1024x1024.png?auto=format,compress&fit=max&w=2000" width="500" height="500" />
+        </section>
+
+        {/* End Saad's Slides */}
+
         <section>
         <h2 className="r-fit-text" style={{ marginTop: "2rem" }}>Image Component</h2>
         <p>Are you tired of writing code to serve the right image size for different screen sizes and use image optimization services?</p>
