@@ -69,3 +69,7 @@ h2 {
 .reveal .controls .navigate-up .controls-arrow {
   top: 2.3rem;
 }
+.fragment {
+  font-size: 2rem;
+  line-height: 1.5;
+}
