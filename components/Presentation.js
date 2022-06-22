@@ -294,7 +294,6 @@ export default function Presentation() {
                 <div className="fragment">For</div>
                 <div className="fragment">Comments</div>
             </section>
-            <p>https://nextjs.org/blog/layouts-rfc</p>
         </section>
         <section>
             <img src="https://miro.medium.com/max/1400/1*7i76-AVGjDZkjqriy5mFUw.jpeg" />
